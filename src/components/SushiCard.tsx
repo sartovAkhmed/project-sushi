@@ -1,5 +1,5 @@
-import React from 'react';
-import { SushiItem } from '../types';
+import React from "react";
+import { SushiItem } from "../types";
 
 interface SushiCardProps {
   item: SushiItem;
@@ -8,14 +8,14 @@ interface SushiCardProps {
 
 const SushiCard: React.FC<SushiCardProps> = ({ item, onClick }) => {
   return (
-    <div 
+    <div
       className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
       onClick={onClick}
     >
       <div className="relative h-56 overflow-hidden">
-        <img 
-          src={item.imageUrl} 
-          alt={item.name} 
+        <img
+          src={item.imageUrl}
+          alt={item.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {item.isNew && (
@@ -31,10 +31,12 @@ const SushiCard: React.FC<SushiCardProps> = ({ item, onClick }) => {
       </div>
       <div className="p-4">
         <h3 className="text-lg font-bold text-gray-900 mb-1">{item.name}</h3>
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{item.description}</p>
+        <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+          {item.description}
+        </p>
         <div className="flex justify-between items-center">
           <div className="text-sm text-gray-500">{item.weight} г</div>
-          <div className="text-lg font-bold text-red-600">{item.price} ₽</div>
+          <div className="text-lg font-bold text-red-600">{item.price} сом</div>
         </div>
       </div>
     </div>
